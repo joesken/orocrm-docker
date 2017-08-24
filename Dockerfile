@@ -63,6 +63,7 @@ RUN sed -i "s/database_password: null/database_password: orocrm/" /var/www/orocr
 RUN chown -R www-data:www-data web app/cache app/config/parameters.yml app/logs app/attachment
 RUN rm -rf /var/www/html && ln -s /var/www/orocrm/web /var/www/html
 RUN a2enmod rewrite
+RUN a2enmod headers
 
 VOLUME /var/www/orocrm/src
 
